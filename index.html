@@ -5,34 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Doses Radio Live</title>
     <style>
-        body {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .video-container {
-            position: relative;
-            width: 80%;
-            margin: 30px auto;
-        }
-        .earnings {
-            position: absolute;
-            bottom: 10px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            font-size: 20px;
-            border-radius: 5px;
-        }
-        .date-container {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .links {
-            margin-top: 20px;
-        }
+        body { background-color: black; color: white; text-align: center; font-family: Arial, sans-serif; }
+        .video-container { position: relative; width: 80%; margin: 30px auto; }
+        .earnings { position: absolute; bottom: 10px; right: 20px; background: rgba(0, 0, 0, 0.7); padding: 10px; font-size: 20px; border-radius: 5px; }
+        .date-container { margin-top: 20px; font-size: 20px; font-weight: bold; }
+        .links { margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -43,7 +20,6 @@
         Today's Date: <span id="current-date"></span>
     </div>
 
-    <!-- Twitch Embed -->
     <div id="twitch-embed"></div>
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script type="text/javascript">
@@ -58,16 +34,11 @@
     <div class="links">
         <h2>🔗 Quick Links</h2>
         <p><a href="tv-guide.html">📺 View 12-Hour TV Guide</a></p>
-        <p><a href="https://daily-doses.org" target="_blank">🌐 Official Website</a></p>
-        <p><a href="https://twitch.tv/dailydosesradio" target="_blank">🎥 Watch Live</a></p>
     </div>
 
     <script>
         function updateDate() {
-            const now = new Date();
-            document.getElementById("current-date").textContent = now.toLocaleDateString('en-GB', {
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-            });
+            document.getElementById("current-date").textContent = new Date().toLocaleDateString('en-GB');
         }
         updateDate();
 
@@ -81,6 +52,7 @@
 
 </body>
 </html>
+
 
 
 

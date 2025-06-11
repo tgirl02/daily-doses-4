@@ -6,7 +6,7 @@
     <title>Daily Doses Radio Live</title>
     <style>
         body {
-            background-color: black; /* Cinematic black background */
+            background-color: black;
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
@@ -14,11 +14,11 @@
         .video-container {
             position: relative;
             width: 80%;
-            margin: 50px auto;
+            margin: 30px auto;
         }
         video {
             width: 100%;
-            border-radius: 10px; /* Optional rounded corners */
+            border-radius: 10px;
         }
         .earnings {
             position: absolute;
@@ -28,6 +28,23 @@
             padding: 10px;
             font-size: 20px;
             border-radius: 5px;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .schedule {
+            margin-top: 30px;
+            border-collapse: collapse;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .schedule th, .schedule td {
+            padding: 10px;
+            border: 1px solid white;
+        }
+        .schedule th {
+            background-color: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
@@ -40,13 +57,44 @@
         <div class="earnings">Earnings: $<span id="earnings-count">0.00</span></div>
     </div>
 
+    <div class="links">
+        <h2>Important Links</h2>
+        <p><a href="https://daily-doses.org" target="_blank">Official Website</a></p>
+        <p><a href="https://twitter.com/daily_doses_radio" target="_blank">Twitter</a></p>
+        <p><a href="https://twitch.tv/lovelyhomie" target="_blank">Twitch Live Stream</a></p>
+    </div>
+
+    <h2>📅 Show Schedule</h2>
+    <table class="schedule">
+        <tr>
+            <th>Day</th>
+            <th>Show</th>
+            <th>Time (GMT)</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>Morning Vibes</td>
+            <td>09:00 - 11:00</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>Music Spotlight</td>
+            <td>18:00 - 20:00</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>Weekend Warm-Up</td>
+            <td>20:00 - 22:00</td>
+        </tr>
+    </table>
+
     <script>
         let earnings = 0;
         function updateEarnings() {
-            earnings += 0.01; // Increment earnings (you can sync this with your revenue tracking)
+            earnings += 0.01;
             document.getElementById("earnings-count").textContent = earnings.toFixed(2);
         }
-        setInterval(updateEarnings, 5000); // Update every 5 seconds
+        setInterval(updateEarnings, 5000);
     </script>
 
 </body>
@@ -54,6 +102,82 @@
 
 <div class="links">
     <h2>Important Links</h2>
-    <p><a href="https://github.com/tgirl02/daily-doses-4/edit/main/tvschedule" target="_blank">Edit this file on GitHub</a></p>
+    <p><a href="https://daily-doses.org" target="_blank">Official Website</a></p>
+    <p><a href="https://github.com/tgirl02/daily-doses-4/edit/main/index.html" target="_blank">Edit this file on GitHub</a></p>
 </div>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Hour TV Guide</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .schedule {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        .schedule th, .schedule td {
+            padding: 10px;
+            border: 1px solid white;
+        }
+        .schedule th {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📅 12-Hour TV Guide – June 10, 2025</h1>
+
+    <table class="schedule">
+        <tr>
+            <th>Time Slot</th>
+            <th>Program</th>
+        </tr>
+        <tr>
+            <td>6:00 AM - 9:00 AM</td>
+            <td>BBC One morning news and daytime shows</td>
+        </tr>
+        <tr>
+            <td>9:00 AM - 12:00 PM</td>
+            <td>PBS educational programs and children's shows</td>
+        </tr>
+        <tr>
+            <td>12:00 PM - 3:00 PM</td>
+            <td>SiriusXM continuous music blocks with ads</td>
+        </tr>
+        <tr>
+            <td>3:00 PM - 6:00 PM</td>
+            <td>HBO afternoon movie reruns</td>
+        </tr>
+        <tr>
+            <td>6:00 PM - 9:00 PM</td>
+            <td>NBC daytime sitcoms and primetime previews</td>
+        </tr>
+        <tr>
+            <td>9:00 PM - 12:00 AM</td>
+            <td>SiriusXM continuous music blocks with ads</td>
+        </tr>
+        <tr>
+            <td>12:00 AM - 6:00 AM</td>
+            <td>No programming available</td>
+        </tr>
+    </table>
+
+    <p><a href="index.html">🔙 Back to Home</a></p>
+
+</body>
+</html>
+
+<div class="links">
+    <h2>Important Links</h2>
+    <p><a href="tv-guide.html" target="_blank">📺 View 12-Hour TV Guide</a></p>
+</div>

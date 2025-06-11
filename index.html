@@ -44,16 +44,9 @@
     <div class="date-container">
         Today's Date: <span id="current-date"></span>
     </div>
-   
-   <!-- Twitch Embed -->
-  <div id="twitch-embed"></div>
-  <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-  <script type="text/javascript">
-    new Twitch.Player("twitch-embed", {
-      channel: "lovelyhomie",
-      parent: ["daily-doses.org"]
-    });
-  </script>
+
+    <div class="video-container">
+        <video src="YOUR_STREAM_URL_HERE" autoplay controls></video>
         <div class="earnings">Earnings: $<span id="earnings-count">0.00</span></div>
     </div>
 
@@ -82,96 +75,5 @@
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>12-Hour TV Guide</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .schedule {
-            margin: 30px auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-        .schedule th, .schedule td {
-            padding: 10px;
-            border: 1px solid white;
-        }
-        .schedule th {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .date-container {
-            margin: 20px auto;
-            font-size: 20px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>📺 12-Hour TV Guide</h1>
-
-    <div class="date-container">
-        Today's Date: <span id="current-date"></span>
-    </div>
-
-    <table class="schedule">
-        <tr>
-            <th>Time Slot</th>
-            <th>Program</th>
-        </tr>
-        <tr>
-            <td>6:00 AM - 9:00 AM</td>
-            <td>BBC One morning news and daytime shows</td>
-        </tr>
-        <tr>
-            <td>9:00 AM - 12:00 PM</td>
-            <td>PBS educational programs and children's shows</td>
-        </tr>
-        <tr>
-            <td>12:00 PM - 3:00 PM</td>
-            <td>SiriusXM continuous music blocks with ads</td>
-        </tr>
-        <tr>
-            <td>3:00 PM - 6:00 PM</td>
-            <td>HBO afternoon movie reruns</td>
-        </tr>
-        <tr>
-            <td>6:00 PM - 9:00 PM</td>
-            <td>NBC daytime sitcoms and primetime previews</td>
-        </tr>
-        <tr>
-            <td>9:00 PM - 12:00 AM</td>
-            <td>SiriusXM continuous music blocks with ads</td>
-        </tr>
-        <tr>
-            <td>12:00 AM - 6:00 AM</td>
-            <td>No programming available</td>
-        </tr>
-    </table>
-
-    <p><a href="index.html">🔙 Back to Home</a></p>
-
-    <script>
-        function updateDate() {
-            const now = new Date();
-            document.getElementById("current-date").textContent = now.toLocaleDateString('en-GB', {
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-            });
-        }
-        updateDate();
-    </script>
-
-</body>
-</html>
-
-<p><a href="tv-guide.html">📺 View 12-Hour TV Guide</a></p>
 
 

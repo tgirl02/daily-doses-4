@@ -16,10 +16,6 @@
             width: 80%;
             margin: 30px auto;
         }
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
         .earnings {
             position: absolute;
             bottom: 10px;
@@ -34,36 +30,47 @@
             font-size: 20px;
             font-weight: bold;
         }
+        .links {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <h1>🎧 Daily Doses Radio Live 🎧</h1>
 
-    <!-- Dynamic Date Display -->
     <div class="date-container">
         Today's Date: <span id="current-date"></span>
     </div>
 
-    <div class="video-container">
-        <video src="YOUR_STREAM_URL_HERE" autoplay controls></video>
-        <div class="earnings">Earnings: $<span id="earnings-count">0.00</span></div>
+    <!-- Twitch Embed -->
+    <div id="twitch-embed"></div>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <script type="text/javascript">
+        new Twitch.Player("twitch-embed", {
+            channel: "lovelyhomie",
+            parent: ["daily-doses.org"]
+        });
+    </script>
+
+    <div class="earnings">Earnings: $<span id="earnings-count">0.00</span></div>
+
+    <div class="links">
+        <h2>🔗 Quick Links</h2>
+        <p><a href="tv-guide.html">📺 View 12-Hour TV Guide</a></p>
+        <p><a href="https://daily-doses.org" target="_blank">🌐 Official Website</a></p>
+        <p><a href="https://twitch.tv/dailydosesradio" target="_blank">🎥 Watch Live</a></p>
     </div>
 
     <script>
-        // Function to update the date display
         function updateDate() {
             const now = new Date();
-            const formattedDate = now.toLocaleDateString('en-GB', {
+            document.getElementById("current-date").textContent = now.toLocaleDateString('en-GB', {
                 weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
             });
-            document.getElementById("current-date").textContent = formattedDate;
         }
-
-        // Initialize the date display
         updateDate();
 
-        // Earnings counter script
         let earnings = 0;
         function updateEarnings() {
             earnings += 0.01;
@@ -75,7 +82,6 @@
 </body>
 </html>
 
-<p><a href="https://github.com/tgirl02/daily-doses-4/blob/main/tv%20guide.html">📺 View 12-Hour TV Guide</a></p>
 
 
 

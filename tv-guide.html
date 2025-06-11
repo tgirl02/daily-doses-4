@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Hour TV Guide</title>
+    <style>
+        body { background-color: black; color: white; text-align: center; font-family: Arial, sans-serif; }
+        .schedule { margin: 30px auto; border-collapse: collapse; width: 80%; }
+        .schedule th, .schedule td { padding: 10px; border: 1px solid white; }
+        .schedule th { background-color: rgba(255, 255, 255, 0.2); }
+        .date-container { margin: 20px auto; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>📺 12-Hour TV Guide</h1>
+
+    <div class="date-container">
+        Today's Date: <span id="current-date"></span>
+    </div>
+
+    <table class="schedule">
+        <tr><th>Time Slot</th><th>Program</th></tr>
+        <tr><td>6:00 AM - 9:00 AM</td><td>BBC One morning news</td></tr>
+        <tr><td>9:00 AM - 12:00 PM</td><td>PBS children's shows</td></tr>
+        <tr><td>12:00 PM - 3:00 PM</td><td>SiriusXM music blocks</td></tr>
+        <tr><td>3:00 PM - 6:00 PM</td><td>HBO afternoon movies</td></tr>
+        <tr><td>6:00 PM - 9:00 PM</td><td>NBC sitcoms</td></tr>
+        <tr><td>9:00 PM - 12:00 AM</td><td>SiriusXM music blocks</td></tr>
+        <tr><td>12:00 AM - 6:00 AM</td><td>No programming available</td></tr>
+    </table>
+
+    <p><a href="index.html">🔙 Back to Home</a></p>
+
+    <script>
+        function updateDate() {
+            document.getElementById("current-date").textContent = new Date().toLocaleDateString('en-GB');
+        }
+        updateDate();
+    </script>
+
+</body>
+</html>
+

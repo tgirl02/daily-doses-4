@@ -3,24 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Doses Radio Live</title>
+    <title>Daily Doses Radio & TV Guide</title>
     <style>
-        body { background-color: black; color: white; text-align: center; font-family: Arial, sans-serif; }
-        .video-container { position: relative; width: 80%; margin: 30px auto; }
-        .earnings { position: absolute; bottom: 10px; right: 20px; background: rgba(0, 0, 0, 0.7); padding: 10px; font-size: 20px; border-radius: 5px; }
-        .date-container { margin-top: 20px; font-size: 20px; font-weight: bold; }
-        .links { margin-top: 20px; }
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .content-container {
+            width: 80%;
+            margin: 30px auto;
+        }
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .earnings {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .date-container {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .schedule {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px auto;
+        }
+        .schedule th, .schedule td {
+            padding: 10px;
+            border: 1px solid white;
+        }
+        .schedule th {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .nav-links {
+            margin-top: 20px;
+        }
+        .nav-links a {
+            color: lightblue;
+            text-decoration: none;
+            margin: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>🎧 Daily Doses Radio Live 🎧</h1>
+    <h1>🎧 Daily Doses Radio & TV Guide 📺</h1>
 
     <div class="date-container">
         Today's Date: <span id="current-date"></span>
     </div>
 
-    <div id="twitch-embed"></div>
+    <!-- Twitch Embed -->
+    <div id="twitch-embed" class="content-container"></div>
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script type="text/javascript">
         new Twitch.Player("twitch-embed", {
@@ -31,14 +73,32 @@
 
     <div class="earnings">Earnings: $<span id="earnings-count">0.00</span></div>
 
-    <div class="links">
-        <h2>🔗 Quick Links</h2>
-        <p><a href="tv-guide.html">📺 View 12-Hour TV Guide</a></p>
+    <div class="nav-links">
+        <a href="#radio">🎙️ Live Radio</a> | 
+        <a href="#tv-guide">📺 12-Hour TV Guide</a>
     </div>
+
+    <!-- TV Guide Section -->
+    <h2 id="tv-guide">📺 12-Hour TV Guide</h2>
+    <table class="schedule">
+        <tr>
+            <th>Time Slot</th>
+            <th>Program</th>
+        </tr>
+        <tr><td>6:00 AM - 9:00 AM</td><td>BBC One morning news</td></tr>
+        <tr><td>9:00 AM - 12:00 PM</td><td>PBS children's shows</td></tr>
+        <tr><td>12:00 PM - 3:00 PM</td><td>SiriusXM music blocks</td></tr>
+        <tr><td>3:00 PM - 6:00 PM</td><td>HBO afternoon movies</td></tr>
+        <tr><td>6:00 PM - 9:00 PM</td><td>NBC sitcoms</td></tr>
+        <tr><td>9:00 PM - 12:00 AM</td><td>SiriusXM music blocks</td></tr>
+        <tr><td>12:00 AM - 6:00 AM</td><td>No programming available</td></tr>
+    </table>
 
     <script>
         function updateDate() {
-            document.getElementById("current-date").textContent = new Date().toLocaleDateString('en-GB');
+            document.getElementById("current-date").textContent = new Date().toLocaleDateString('en-GB', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
         }
         updateDate();
 
@@ -52,6 +112,7 @@
 
 </body>
 </html>
+
 
 
 
